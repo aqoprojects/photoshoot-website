@@ -1,0 +1,23 @@
+{% load static %}
+<header class="header">
+	<div class="burger">
+		<div class="burger__patty"></div>
+		<div class="burger__patty"></div>
+		<div class="burger__patty"></div>
+	</div>
+
+	<nav class="menu">
+		<div class="menu__brand">
+			<a href="{% url 'gallery:home' %}"><div class="logo"><img class="img-fluid" src="{% static 'images/logo.png' %}" alt="" /></div></a>
+		</div>
+		<ul class="menu__list">
+			<li class="menu__item"><a href="{% url 'gallery:home' %}" class="menu__link">Home</a></li>
+			<li class="menu__item"><a href="{% url 'gallery:about' %}" class="menu__link">About Us</a></li>
+			<li class="menu__item"><a href="{% url 'gallery:services' %}" class="menu__link">Services</a></li>
+			<li class="menu__item"><a href="{% url 'gallery:portfolio' %}" class="menu__link">Portfolio</a></li>
+			<li class="menu__item"><a href="pricing.html" class="menu__link">Pricing</a></li>
+			<li class="menu__item"><a href="contact-us.html" class="menu__link">Contact Us</a></li>
+		</ul>
+	</nav>
+</header>
+	

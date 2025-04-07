@@ -14,4 +14,3 @@ class Photo(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     picture = models.ImageField(upload_to='gallery/', max_length=1000, validators=[validate_image_size])
     date = models.DateTimeField(auto_now_add=True)
-

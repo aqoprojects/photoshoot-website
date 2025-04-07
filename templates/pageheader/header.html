@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Site Metas -->
+<title>
+    {% block title %}PhotoShoot - Photography &amp; Portfolio Template{% endblock title %}
+</title>
+
+<meta name="keywords" content="{% block pagekeyword %} page keywords {% endblock %}">
+
+<meta name="description" content="{% block description %} page description {% endblock description %}">
+
+<meta name="author" content="{% block author %} page author {% endblock author %}">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="politics_version">
+    {% block content %}
+    
+    {% block nav %}
+    {% include 'pageheader/navmenu.html' %}
+    {% endblock nav %}
+
+    
+    {% block page_info %}
+    <div class="banner-area banner-bg-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="banner">
+						<h2>
+                            
+                            {% block pagename %}
+                                Home
+                            {% endblock pagename %}
+                                
+                            </h2>
+						<ul class="page-title-link">
+							<li><a href="{% url 'gallery:home' %}">Home</a></li>
+							<li><a href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    {% endblock page_info %}
+        
+        
+
+    {% endblock %}
+
+    {% include 'pageheader/footer.html' %}
+
+</body>
+
+
+</html>
