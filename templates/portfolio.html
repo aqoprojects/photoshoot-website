@@ -1,17 +1,8 @@
 {% extends 'pageheader/header.html' %}
 {% load static %}
-<body id="page-top" class="politics_version">
-	
 	{% block content %}
 		
-    <!-- LOADER -->
-    <div id="preloader">
-		<div class="loader-rd"></div>
-		<div class="loader-rd"></div>
-		<div class="loader-rd"></div>
-		<div class="loader-rd"></div>
-    </div><!-- end loader -->
-    <!-- END LOADER -->
+
 
 	{% block nav %}
 		{{block.super}}
@@ -28,12 +19,11 @@
 	
 	
 	{% block page_info %}
+	
+	{% with page_name="Portfolio" %}
 		{{block.super}}
-		{% block pagename %}
-			Portfolio
-		{% endblock pagename %}
-			
-		
+	{% endwith %}
+	
 	{% endblock page_info %}
 		
 	
@@ -81,120 +71,11 @@
 		</div>
 	</div>
 	
-	<div id="reviews" class="section wb parallaxie" style="background: url({% static 'uploads/reviews-bg.jpg' %}) ">
-		<div class="container">
-			<div class="section-title text-center">
-				<h3>Reviews</h3>
-				<p>We thanks for all our awesome testimonials! There are hundreds of our happy customers! </p>
-			</div><!-- end title -->
-
-			<div class="row">
-				<div class="col-md-12 col-sm-12">
-					<div class="testi-carousel owl-carousel owl-theme">
-
-						
-						{% for review in reviews %}
-						<div class="testimonial clearfix">
-							<figure class="testimonial_img">
-								<img src="{{review.profile_picture.url}}" alt="" class="img-fluid">
-							</figure>
-							<div class="desc">
-								<h3><i class="fa fa-quote-left"></i>{{review.title|title}}</h3>
-								<p>{{review.info}}</p>
-							</div>
-							<div class="testi-meta">
-								<h4>{{review.name}} </h4>
-							</div>
-							<!-- end testi-meta -->
-						</div>
-						<!-- end testimonial -->
-						{% endfor %}
-
-						
-					</div><!-- end carousel -->
-				</div><!-- end col -->
-			</div><!-- end row -->
-		</div><!-- end container -->
-	</div><!-- end section -->
 	
-	<footer class="main-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<div class="mb-3 img-logo">
-						<a href="#">
-							 <img src="images/logo2.png" alt="">
-						</a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<h4 class="mb-4 ph-fonts-style foot-title">
-						RECENT NEWS
-					</h4>
-					<p class="ph-links-column">
-						<a href="#" class="text-black">About us</a>
-						<a href="#" class="text-black">Services</a>
-						<a href="#" class="text-black">Selected Work</a>
-						<a href="#" class="text-black">Get In Touch</a>
-						<a href="#" class="text-black">Careers</a>
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<h4 class="mb-4 ph-fonts-style foot-title">
-						CATEGORIES
-					</h4>
-					<p class="ph-links-column">
-						<a href="#" class="text-black">Business</a>
-						<a href="#" class="text-black">Design</a>
-						<a href="#" class="text-black">Real life</a>
-						<a href="#" class="text-black">Science</a>
-						<a href="#" class="text-black">Tech</a>
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<h4 class="mb-4 ph-fonts-style foot-title">
-						SUBSCRIBE
-					</h4>
-					<p class="ph-fonts-style_p">
-						Get monthly updates and free resources.
-					</p>
-					<div class="media-container-column" data-form-type="formoid">
-						<div data-form-alert="" class="align-center" hidden="">
-							Thanks for filling out the form!
-						</div>
-
-						<form class="form-inline" action="#" method="post">
-							<input value="" data-form-email="true" type="hidden">
-							<div class="form-group">
-								<input class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email" type="email">
-							</div>
-							<div class="input-group-btn">
-								<button href="" class="btn hover-effect-new btn-primary" type="submit" role="button"><span> Subscribe </span></button>
-							</div>
-						</form>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</footer>
-
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">                    
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 Design by : 
-					<a href="https://html.design/">html design</a> Distributed by: <a href="https://themewagon.com/">ThemeWagon</a>
-                    </p>
-                </div>
-            </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
-
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
-
+	{% block review %}
+		{{block.super}}
+	{% endblock review %}
+		
 	{% endblock content %}
 
-</body>
-</html>
+	

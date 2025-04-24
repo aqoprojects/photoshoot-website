@@ -42,6 +42,15 @@
 </head>
 
 <body id="page-top" class="politics_version">
+    
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="loader-rd"></div>
+		<div class="loader-rd"></div>
+		<div class="loader-rd"></div>
+		<div class="loader-rd"></div>
+	</div><!-- end loader -->
+	<!-- END LOADER -->
     {% block content %}
     
     {% block nav %}
@@ -57,14 +66,12 @@
 					<div class="banner">
 						<h2>
                             
-                            {% block pagename %}
-                                Home
-                            {% endblock pagename %}
+                            {{ page_name|default:"Home" }}
                                 
                             </h2>
 						<ul class="page-title-link">
 							<li><a href="{% url 'gallery:home' %}">Home</a></li>
-							<li><a href="#"></a></li>
+							<li><a href="#">{{ page_name|default:"Home" }}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -72,12 +79,20 @@
 		</div>
 	</div>
     {% endblock page_info %}
-        
+    
+    
+    {% block review %}
+    {% include 'pageheader/review.html' %}
+    {% endblock review %}
         
 
     {% endblock %}
+	<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-paper-plane-o"
+        aria-hidden="true"></i></a>
 
     {% include 'pageheader/footer.html' %}
+    
+
 
 </body>
 

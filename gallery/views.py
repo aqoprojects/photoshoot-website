@@ -49,3 +49,20 @@ class portfolioPage(ListView):
         context['reviews'] = Review.objects.all()
         return context
 
+class pricingPage(View):
+    template_name = 'pricing.html'
+
+    def get(self, request, *args, **kwargs):
+        price_plans = Pricing.objects.all()
+        context = {'plans': price_plans}
+        context['reviews'] = Review.objects.all()
+        return render(request, self.template_name, context)
+
+class supportPage(View):
+    template_name = "contact-us.html"
+
+    def get(self, request, *args, **kwargs):
+        price_plans = Pricing.objects.all()
+        context = {'plans': price_plans}
+        context['reviews'] = Review.objects.all()
+        return render(request, self.template_name, context)
