@@ -9,16 +9,30 @@
 <!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+{% block meta_seo %}
 <!-- Site Metas -->
-<title>
-    {% block title %}PhotoShoot - Photography &amp; Portfolio Template{% endblock title %}
-</title>
+<title>{{meta_title|default:'PhotoShoot - Photography &amp; Portfolio'}}</title>
 
-<meta name="keywords" content="{% block pagekeyword %} page keywords {% endblock %}">
+<!-- HTML SEO META  -->
+<meta name="keywords" content="{{keywords|default:'pictures, photos, gallery, studio, 4k images, portfolio, camera'}}">
+<meta name="description" content="{{meta_descripiton|default:'PhotoShoot - Photography &amp; Portfolio'}}">
+<meta name="author" content="{{author|default:'PhotoShoot'}}">
 
-<meta name="description" content="{% block description %} page description {% endblock description %}">
 
-<meta name="author" content="{% block author %} page author {% endblock author %}">
+
+	
+	<meta property="og:title" content="{{meta_title|default:'PhotoShoot - Photography &amp; Portfolio'}}">
+	<meta property="og:description" content="{{meta_descripiton|default:'PhotoShoot - Photography &amp; Portfolio'}}">
+	<meta property="og:image" content="{% static 'images/favicon.ico' %}">
+	<meta property="og:type" content="{{request.get_host}}">
+	<meta property="og:url" content="{{request.path}}">
+	<meta property="twitter:card" content="{% static 'images/apple-touch-icon.png' %}">
+	<meta property="twitter:site" content="@phootshoot">
+	<meta property="twitter:title" content="{{meta_title|default:'PhotoShoot - Photography &amp; Portfolio'}} - PhotoShoot">
+	<meta property="twitter:description" content="{{meta_descripiton|default:'PhotoShoot - Photography &amp; Portfolio'}}">
+	<meta property="twitter:image" content="{% static 'images/apple-touch-icon.png' %}">
+{% endblock  %}
+	
 
 <!-- Site Icons -->
 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />

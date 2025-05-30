@@ -2,3 +2,4 @@ myenv/
 photoshoot-master/
 *__pycache__/
 static/
+.env

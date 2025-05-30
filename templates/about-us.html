@@ -1,21 +1,23 @@
 {% extends 'pageheader/header.html' %}
 {% load static %}
 
-    {% block content %}
     
-	
+        
+    {% block meta_seo %}
+        
+        {% with  author="PhotoShoot" keywords="about, photo, know about us" meta_descripiton="About us page - PhotoShoot" meta_title="About Us" %}
+            {{block.super}}
+        {% endwith %}
+            
+    {% endblock meta_seo %}
+    
+
+    {% block content %}
+
     
     {% block nav %}{{block.super}}{% endblock nav %}
         
-	
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">
-			<img class="img-fluid" src="{% static 'images/logo.png' %}" alt="" />
-		</a>
-      </div>
-    </nav>
+
 	
 	
     {% block page_info %}
